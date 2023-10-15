@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Episodes from "./Episodes";
 import Recent from "./Recent";
+import "../inputs.css";
 function Feed() {
     const [url,setUrl] = useState("");
     const [feed, setFeed] = useState(null);
@@ -49,11 +50,17 @@ function Feed() {
     }
     return (
         <div className="URL">
+            <div className="input-button">
             <input type="text" placeholder="Enter RSS Feed Link" onChange={handleInput} />
             <button onClick={()=>fetchFeed(url)}>Fetch Episodes</button>
+            </div>
             {error? "Error fetching episodes"+error:<p></p> }
             {Object.keys(recent).length>0 ? <Recent list={recent} setUrl={setUrl} fetchFeed={fetchFeed}/>:<p></p>}
-            {feed ? <Episodes feed={feed}  />: load ? <p>Loading...</p>:<p></p>}
+            {load && <div className="load-container">
+                {load && <img src="/load.gif" height="64px" alt="Loading" />}
+            </div>}
+            
+            {feed ? <Episodes feed={feed}  />: <p></p>}
         </div>
     );
 }

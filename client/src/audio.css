@@ -1,0 +1,20 @@
+.Player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid white;
+    background-color: #0a0a23; /* Background color for the player */
+    color: white; /* Text color for controls */
+    padding: 10px; /* Adjust as needed */
+  }
+.Player audio {
+    background-color: #3b3b4f;
+    color: aliceblue;
+    width: 95%; /* Extend source box to full screen width */
+  }
+  .current-title {
+    font-size: 1.2rem; /* Adjust the font size as needed */
+    padding: 4px; /* Add spacing */
+    text-align: left;
+  }

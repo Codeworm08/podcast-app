@@ -1,0 +1,10 @@
+.Episodes{
+    margin: 30px;
+}
+h2:hover{
+    cursor: pointer;
+}
+.episode-titles h2:hover{
+    background-color: rgb(210, 227, 243);
+    color: black;
+}

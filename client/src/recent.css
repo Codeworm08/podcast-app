@@ -1,0 +1,42 @@
+.recent {
+    background-color: #1b1b32; /* Sidebar background color */
+    color: #fff; /* Text color */
+    width: 200px; /* Initial sidebar width */
+    border: 3px solid white;
+    position:fixed;
+    top:50px;
+    left:0;
+    /* Sidebar collapses on screens smaller than 768px (adjust as needed) */
+    @media (max-width: 768px) {
+      width: 0;
+      overflow: hidden;
+    }
+    font-size: 1.4rem;
+  }
+  .recent h3{
+    font-size: 2rem;
+    border-bottom: 2px solid white;
+  }
+  /* Style for sidebar links/buttons */
+  .recent button {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Style for collapsed sidebar links/buttons */
+  @media (max-width: 768px) {
+    .recent button {
+      display: none;
+    }
+  }
+  .recent ul {
+        list-style-type: none; /* Removes the bullet points */
+
+  }
