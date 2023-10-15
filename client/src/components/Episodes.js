@@ -6,15 +6,10 @@ function Episodes(props) {
     }, [props.feed]);
     return (
         <div className="Episodes">
-        {props.feed && props.feed.map((episode, index) => (
+        {props.feed && props.feed.items.map((episode, index) => (
             <div key={index}>
-              <h2>{`Episode ${index + 1}:`}</h2>
+              <h2>{episode.title}</h2>
               <div>
-                <p>Title: {episode.title}</p>
-                <p>Link: {episode.link}</p>
-              </div>
-              <div>
-                <p>Description: {episode.description}</p>
                 <p>Published Date: {episode.pubDate}</p>
               </div>
               <div>

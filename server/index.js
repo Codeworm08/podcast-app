@@ -13,7 +13,7 @@ app.get("/feed",async (req,res)=> {
             res.status(400).send('Missing "url" query parameter.');
             return;
         }
-        let feed = await parser.parseURL('https://www.hiddenhistoryhappyhour.com/feed/podcast');
+        let feed = await parser.parseURL(url);
         console.log(feed.title);
         
         feed.items.forEach((episode, index)=> {
@@ -21,7 +21,7 @@ app.get("/feed",async (req,res)=> {
           console.log('Title:', episode.title);
           console.log('Link:', episode.enclosure.url);
         });
-        res.json(feed.items);
+        res.json(feed);
     } catch (error) {
         console.error("Error parsing the feed: ",error);
         res.status(500).send("Internal Server Error");
