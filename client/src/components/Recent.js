@@ -9,7 +9,7 @@ function Recent(props) {
             <h3>Recent</h3>
             <ul>
                 {props.list.map((feed,i) => (
-                    <li key={i}>
+                    <li className="past"key={i}>
                         <button onClick={()=>handleClick(feed.url)}>{feed.title}</button>
                     </li>
                 ))}
